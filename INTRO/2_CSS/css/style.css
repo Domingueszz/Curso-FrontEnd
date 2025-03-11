@@ -1,0 +1,46 @@
+body {
+    padding: 20px;
+}
+
+/*testando*/
+h3 {
+    color: red;
+}
+
+/*classes: */
+
+.paragraph {
+    background-color: black;
+    color: white;
+}
+
+/*id´s */
+#title {
+    background-color: blue;
+    color: white;
+}
+
+
+/* Ordens das regras*/
+h2 {
+    border-bottom: 2px solid black;
+}
+
+.titulo{
+    border-bottom: 2px solid red;
+}
+
+#titulo0{
+    border-bottom: 4px solid blue;
+}
+
+.color-name {
+    color:blueviolet
+}
+
+.bg-image {
+    background-image: url("../images/exemplo2.jpg");
+    padding: 10px;
+    color: white;
+    background-position: center;
+}

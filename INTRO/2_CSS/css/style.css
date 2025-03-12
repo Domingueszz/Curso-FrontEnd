@@ -44,3 +44,68 @@ h2 {
     color: white;
     background-position: center;
 }
+
+.hw1{
+    height: 130px;
+    background-color: blue;
+}
+
+.shorthand {
+    color: white;
+    background-color: black;
+    padding: 6px 12px 18px 24px;
+    /*topo, direita, inferior, esquerda*/
+}
+
+
+/*Box Model*/
+.box-model{
+    margin: 20px;
+    padding: 15px 25px;
+    border: 4px solid black;
+    border-radius: 10px;
+    width: 400px;
+    height: 200px;
+}
+
+/*Box Model 2*/
+#box-model2{
+    margin: 20px;
+    padding: 15px 25px;
+    border: 4px solid black;
+    border-radius: 10px;
+    outline: 5px solid red;
+    height: 200px;
+    width: 200px;
+    background-color: blue;
+}
+
+.title2{
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+.text{
+    text-decoration: underline;
+    color: blue;
+}
+
+.text1{
+    text-decoration:line-through ;
+    color: red;
+}
+
+.text2{
+    text-decoration: none;
+    color: green;
+}
+
+.display{
+    width: 100px;
+    height: 75px;
+    background-color: aquamarine;
+    margin: 10px;
+    display: inline-block;
+
+}

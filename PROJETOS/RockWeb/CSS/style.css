@@ -42,14 +42,22 @@ body{
     opacity: 60%;
 }
 
-.textos
-
-
-{
+.textos{
     position: absolute;
     color: white;
+    margin-top: 20px;
+    margin-left: 100px;
+
 }
 
 .titulo1{
     
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.sobre{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    margin-right: 600px;
+    text-align: justify;
 }

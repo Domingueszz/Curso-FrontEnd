@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <h2>Formulários HTML</h2>
+
+    <!-- Forms 1-->
+    <form action="register.php" method="POST">
+        <div>
+            <label>Nome:</label>
+            <input type="text" />
+        </div>
+    
+    <!-- Atributo: Name -->
+        <div>
+            <label>Idade</label>
+            <input type="text" name="age">
+        </div>
+    <!-- Select -->
+     <div>
+        <label for="job">Selecione a sua profissão:</label>
+        <select name="job">
+            <option value="programador">Programador</option>
+            <option value="tester">Tester/QA</option>
+            <option value="devops">DevOps</option>
+        </select>
+    </div>
+
+    <!-- Atributo: Selected-->
+     <div>
+        <label for="contract">Você leu os termos do contrato?</label>
+        <select name="contract">
+            <option value="sim">Sim</option>
+            <option value="nao" selected>Não</option>
+        </select>
+     </div>
+
+     
+
+     <!-- Multiplas Opcões-->
+     <div>
+        <label for="items">Selecione os itens desejados:</label>
+        <select name="items" multiple>
+            <option value="mouse">Mouse</option>
+            <option value="headset">Headset</option>
+            <option value="mousepad">Mousepad</option>
+            <option value="teclado">Teclado</option>
+        </select>
+    </div>
+    
+    <!-- textarea -->
+    <div>
+        <label for="comment">Escreva abaixo o que você achou da entrevista:</label>
+        <textarea name="comment" cols="38" rows="10"></textarea>
+    </div>
+
+    <!-- Envio -->
+     <input type="submit" value="Enviar">
+
+    
+
+    </form>
+</body>
+</html>

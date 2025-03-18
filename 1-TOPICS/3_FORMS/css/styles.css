@@ -11,3 +11,9 @@ div input,
 div label {
     display: block;
 }
+
+.radio label,
+.radio input,
+.radio span {
+    display: inline-block;
+}

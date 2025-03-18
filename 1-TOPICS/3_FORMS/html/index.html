@@ -59,8 +59,131 @@
         <textarea name="comment" cols="38" rows="10"></textarea>
     </div>
 
+
+    <!-- fieldset e legend -->
+    <div>
+     <fieldset>
+        <legend>Preencha as suas informações:</legend>
+        <label for="firstname">Nome:</label>
+        <input type="text" name="firstname">
+        <label for="lastname">Sobrenome:</label>
+        <input type="text" name="lastname">
+     </fieldset>
+    </div>
+
+    <!-- datalist -->
+     <div>
+        <label for="flavor">Escolha o sabor:</label>
+        <input type="text" list="flavors" name="flavor">
+        
+        <datalist id="flavors">
+            <option value="Morango"></option>
+            <option value="Abacaxi"></option>
+            <option value="Chocolate"></option>
+            <option value="Pistache"></option>
+        </datalist>
+     </div>
+
+    <!-- Radio button -->
+    <div>
+        <label for="car">Escolha o modelo do seu carro:</label>
+        <div class="radio">
+            <input type="radio" value="bmw" name="car">
+            <label for="bmw">BMW</label> 
+        </div>
+        <div class="radio">
+            <input type="radio" value="ferrari" name="car">
+            <label for="ferrari">Ferrari</label> 
+        </div>
+        <div class="radio">
+            <input type="radio" value="audi" name="car">
+            <label for="audi">Audi</label> 
+        </div>
+        
+    </div>
+
+    <!-- Checkbox -->
+    <div>
+        <label for="optionals">Opcionais do carro:</label>
+        <div class="radio">
+            <input type="checkbox" name="optionals[]" value="big_tires">
+            <label for="big_tires">Pneus Grandes</label>
+        </div>
+        <div class="radio"> 
+            <input type="checkbox" name="optionals[]" value="turbo">         
+            <label for="turbo">Motor Turbo</label>
+        </div>  
+        <div class="radio">
+            <input type="checkbox"  name="optionals[]" value="nitro">
+            <label for="nitro">Nitro Max</label>
+        </div>
+    </div>
+
+    <!-- datas -->
+    <div>
+        <label for="birthday">Data de nascimento:</label>
+        <input type="date" name="birthday">
+    </div>
+
+    <!-- arquivos -->
+    <div>
+        <label for="image">Insira a sua imagem:</label>
+        <input type="file" name="image">
+    </div>
+
+    <!-- numeros -->
+    <div>
+      <label for="salary">Qual seu salário atual?</label> 
+      <input type="number" name="salary"> 
+    </div>
+
+    <!-- e-mails -->
+    <div>
+        <label for="email">Digite o seu e-mail:</label>
+        <input type="email" name="email">
+    </div>
+
+    <!-- Senha -->
+
+    <div>
+     <label for="password">Digite sua senha:</label>
+     <input type="password" name="password">
+    </div>
+
+    <!-- value -->
+    <div>
+      <label for="value">Digite algum valor:</label>
+      <input type="text" value="0" name="value">  
+    </div> 
+
+    <!-- disabled -->
+    <div>
+        <p>Tente alterar o valor:</p>
+        <input type="text" value="Campo indisponível" disabled>
+    </div>
+
+    <!-- placeholder -->
+    <div>
+        <label for="currentjob">Digite a sua profissão:</label>
+        <input type="text" name="currentjob" placeholder="Digite aqui" required>
+    </div>
+
+    <!-- required -->
+    <div>
+        <label for="termos">Termos da Empresa</label>
+        <div class="radio">
+            <input type="checkbox" name="optionals[]" value="ok">
+            <label for="ok" required >Li e Concordo com os Termos da empresa</label>
+        </div>
+    </div> 
+
+
+    <!-- Reset -->
+     <input type="reset" value="Resetar">
+
     <!-- Envio -->
      <input type="submit" value="Enviar">
+
 
     
 

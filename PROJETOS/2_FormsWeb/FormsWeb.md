@@ -21,7 +21,7 @@ O Figma é uma ferramenta essencial para a criação de interfaces interativas, 
 
 Este projeto é ideal para aprimorar conhecimentos em **desenvolvimento web**, com foco na criação de formulários bem estruturados e agradáveis visualmente.
 
-![alt text](./images/forms.png)
+![alt text](./Images/forms.png)
 
 ---
 

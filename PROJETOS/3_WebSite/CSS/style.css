@@ -257,8 +257,259 @@
     transition: 0.5s;
 }
 
-.plan .plan-btn:hover{
+.plan .plan-btn:hover {
+  
     background-color: #2bac58;
 }    
 
+.plan .plan-btn1{    
+    background-color: rgb(255, 153, 0);
+    color: #fff;
+    font-size: 24px;
+    height: 75px;
+    line-height: 75px;
+    cursor: pointer;
+    transition: 0.5s;
+}
 
+.plan .plan-btn1:hover {
+    background-color: rgb(255, 98, 0);
+
+}    
+
+.plan .recommended {  
+    background-image: url(../Images/listras-tigres.avif);
+    background-size: cover;
+    background-position: center;
+   
+}
+
+/* Conteudo - search domain */
+.search-container {
+    background-color: #081236;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+
+.search-container h2 {
+    color: #fff;
+    font-size: 42px;
+    margin-bottom: 24px;
+}
+
+.search-container p {
+    color: #d5d5d5;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.search-container input{
+    display: block;
+    border: none;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.search-container input[type="text"] {
+    width: 60%;
+    padding: 20px;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.search-container input[type="submit"] {
+    background-color: rgb(255, 42, 0)   ;
+    padding: 15px 30px;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0.8;
+
+}
+
+.search-container input[type="submit"]:hover {
+    opacity: 1;
+
+}
+
+
+/* Conteudo - contact */
+
+.contact-container {
+    text-align: center;
+    padding: 5rem 0 2rem 0;
+}
+
+.contact-container h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.contact-container p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 200px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin:  0 10px 20px;
+}
+
+
+.contact-container textarea {
+    display: block;
+    margin: 0 auto 20px;
+    width: 470px;
+    height: 150px;
+
+}
+
+.contact-container input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    background-color: #2cc762;
+    opacity: 0.8;
+    color: #fff;
+}
+
+.contact-container input[type="submit"]:hover {
+    opacity: 1;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    font-weight: bold;
+    margin: 20px 0 100px;
+    color: #787575;
+}
+
+footer p {
+    margin-top: 50px;
+}
+
+/* Responsividade */
+
+/* SMALL LAPTOPS (1100px) */
+@media (max-width: 1100px) {
+    .plans-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan {
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+/* TABLETS (768px) */
+@media (max-width: 768px) {
+    .navbar-container {
+        height: auto;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .navbar-container a {
+        float: none;
+        display: block;
+        margin: 10px 0;
+    }
+
+    .logo {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+    }
+
+    .navbar-options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        line-height: normal;
+    }
+
+    .navbar-options li {
+        margin: 10px 0;
+    }
+
+    .banner {
+        padding: 4rem 0;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .services-container ul {
+        flex-direction: column;
+    }
+
+    .search-container input[type="text"] {
+        width: 80%;
+    }
+
+    .contact-container input,
+    .contact-container textarea {
+        width: 90%;
+    }
+}
+
+/* MOBILE (480px) */
+@media (max-width: 480px) {
+    .navbar-container {
+        padding: 0.5rem;
+    }
+
+    .navbar-options {
+        flex-direction: column;
+    }
+
+    .shadow h1 {
+        font-size: 28px;
+    }
+
+    .shadow p {
+        font-size: 16px;
+    }
+
+    .services-container ul {
+        flex-direction: column;
+    }
+
+    .plans-container {
+        width: 100%;
+    }
+
+    .plan {
+        max-width: 90%;
+    }
+
+    .search-container input[type="text"] {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .search-container h2 {
+        font-size: 32px;
+    }
+
+    .search-container p {
+        font-size: 18px;
+    }
+
+    .contact-container h2 {
+        font-size: 18px;
+    }
+
+    .contact-container input[type="submit"] {
+        width: 100%;
+    }
+}

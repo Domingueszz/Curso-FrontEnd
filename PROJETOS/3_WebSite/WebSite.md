@@ -21,6 +21,6 @@ O Figma foi utilizado para criar uma interface simples e responsiva, garantindo 
 
 Este projeto é ideal para aprimorar conhecimentos em **desenvolvimento web**, com foco na criação de layouts responsivos e usabilidade.
 
-![alt text](./images/image.png)
+![alt text](./images/tweb.png)
 
 ---

@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 /* HEADER --------------------------------------------- */  
 .capa {
     height: 320px;
@@ -80,16 +81,21 @@ nav a:hover {
 
 /* Sections --------------------------------------------- */  
 
+.barra {
+    width: 100%;
+    height: 5px;
+    background-color: rgb(5, 32, 7);
+}
 .container-white {
     width: 50%;
-    height: 110%;
+    height: 100%;
     background-color: #fff;
     position: absolute;
 }
 
-.container-grenn {
+.container-green {
     width: 50%;
-    height: 110%;
+    height: 340%;
     background-color: #25542d;
     position: absolute;
     right: 0;
@@ -97,22 +103,106 @@ nav a:hover {
 
 .photo1 {
     position: relative;
-    width: 660px;
-    height: 400px;
+    width: 750px;
+    height: 420px;
     margin-top: 40px;
-    margin-left: 5%;
+    margin-left: 4%;
     z-index: 2; 
+    border-radius: 35px;
 }
 
-.container-white h2 {
+.photo2 {
+    position: relative;
+    width: 750px;
+    height: 420px;
+    margin-top: 55px;
+    margin-left: 4%;
+    z-index: 2; 
+    border-radius: 35px;
+}
+
+.topic h2 {
     color: black;
     margin-top: 30px;
     margin-left: 30px;
     
 }
 
+
+.topic {
+    color: black;
+    margin-top: 30px;
+    margin-left: 30px;
+    
+}
+
+.topic span {
+    color: rgb(108, 105, 105);
+    cursor: pointer;
+}
+
+.topic span :hover {
+    color: rgb(85, 83, 83);
+}
+
+.topic h3 {
+    margin-top: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(65, 64, 64);
+}
+
+
 .t {
     max-width: 90%;
     margin-left: 40px;
     
 }
+
+
+/* Asides --------------------------------------------- */  
+
+
+.sidebar, 
+.sidebar2,
+.sidebar3 {
+    margin-right: -60px;
+}
+
+.sidebar {
+    width: 30%;
+    padding: 20px;
+    background-color: white; 
+    position: absolute;
+    right: 10%;
+    top: 395px; 
+    color: rgb(0, 0, 0); 
+    border-radius: 2px;
+}
+
+.sidebar2 {
+    width: 30%;
+    height: 500px;
+    padding: 20px;
+    background-color: white; 
+    position: absolute;
+    right: 10%;
+    top: 500px; 
+    color: rgb(0, 0, 0); 
+    border-radius: 2px;
+}
+
+.sidebar3 {
+    width: 30%;
+    height: 300px;
+    padding: 20px;
+    background-color: white; 
+    position: absolute;
+    right: 10%;
+    top: 1030px; 
+    color: rgb(0, 0, 0); 
+    border-radius: 2px;
+}
+
+

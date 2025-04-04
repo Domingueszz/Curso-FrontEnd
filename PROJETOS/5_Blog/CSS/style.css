@@ -60,25 +60,6 @@ nav a:hover {
     transform: translateY(-40%);
 }
 
-.text1, .text2 {
-    position: absolute;
-    top: 55%;
-    transform: translateY(-50%);
-    width: 35%; 
-    color: #fff;
-}
-
-.text1 {
-    left: 40px; 
-    text-align: left;
-}
-
-.text2 {
-    right: 40px; 
-    text-align: right;
-}
-
-
 /* Sections --------------------------------------------- */  
 .barra {
     width: 100%;
@@ -216,7 +197,7 @@ nav a:hover {
 .sidebar {
     width: 30%;
     padding: 20px;
-    background-color: white;
+    background-color: #F4EFE5;
     position: absolute;
     right: 10%;
     top: 640px;
@@ -273,7 +254,7 @@ nav a:hover {
     width: 30%;
     height: 500px;
     padding: 20px;
-    background-color: white; 
+    background-color: #F4EFE5; 
     position: absolute;
     right: 10%;
     top: 830px; 
@@ -315,7 +296,7 @@ margin-left: 10px;
     width: 30%;
     height: 300px;
     padding: 20px;
-    background-color: white; 
+    background-color: #F4EFE5; 
     position: absolute;
     right: 10%;
     top: 1355px; 
@@ -365,6 +346,68 @@ margin-left: 10px;
     background-color: #00ff73;
 }
 
+.sidebar4 {
+    width: 30%;
+    height: 500px;
+    padding: 20px;
+    position: absolute;
+    right: 6.2%;
+    top: 1680px;
+    color: rgb(0, 0, 0);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.redes nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.redes li {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.redes nav a {
+    text-decoration: none;
+    color: #F4EFE5;
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+.fa-brands {
+    background-color: #F4EFE5;
+    color: #25542d;
+    border-radius: 70px;
+    transition: 0.3s ease;
+}
+
+.fa-instagram {
+    padding: 8px;
+    font-size: 55px;
+}
+
+.fa-square-facebook {
+    padding: 10px;
+    font-size: 45px;
+}
+
+.fa-whatsapp {
+    padding: 9px;
+    font-size: 50px;
+}
+
+.fa-instagram:hover,
+.fa-square-facebook:hover,
+.fa-whatsapp:hover {
+    color: #02ad0e;
+    transform: scale(1.1);
+}
+
 
 /* Footer --------------------------------------------- */  
 
@@ -393,3 +436,5 @@ margin-left: 10px;
     margin-top: 5px;
     font-size: 10px;
 }
+
+

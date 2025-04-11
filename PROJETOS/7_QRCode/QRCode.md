@@ -3,9 +3,6 @@
 ## Introdução  
 Este projeto tem como objetivo desenvolver uma **ferramenta interativa de geração de QR Codes**, utilizando **HTML, CSS e JavaScript**. O usuário pode inserir um texto ou link e, com um clique, gerar um QR Code correspondente, que pode ser escaneado por dispositivos móveis.
 
-## Prototipagem  
-A interface foi planejada de forma **minimalista e funcional**, visando uma boa experiência do usuário em qualquer dispositivo. A estrutura do layout foi inspirada em modelos simples e objetivos, permitindo foco total na funcionalidade principal: gerar QR Codes.
-
 ## Tecnologias Utilizadas  
 - **HTML5**: Responsável por estruturar os campos de entrada e o espaço de exibição do QR Code.  
 - **CSS3**: Aplicado para estilizar a página, garantindo **responsividade**, clareza visual e uma boa apresentação em diferentes tamanhos de tela.  

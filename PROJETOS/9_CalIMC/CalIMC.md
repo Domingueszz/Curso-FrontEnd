@@ -19,4 +19,4 @@ A proposta é criar uma interface simples, acessível e funcional, que apresente
 
 Este projeto é ideal para praticar **interações básicas com o usuário**, **validações simples de dados**, **lógica de programação** e a **construção de interfaces funcionais** com tecnologias web fundamentais.
 
-![Preview da Calculadora de IMC](./images/image.png)
+![Preview da Calculadora de IMC](./Images/image.png)

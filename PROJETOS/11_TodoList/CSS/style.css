@@ -68,7 +68,7 @@ input, select {
 /* Header */
 .todo-container {
     max-width: 450px;
-    margin: 3rem;
+    margin: 5rem;   
     background-color: #fdfdfd;
     padding: 1.5rem;
     border-radius: 15px;
@@ -104,6 +104,13 @@ input, select {
 
 #cancel-edit-btn {
     margin-top: 1rem;
+    background-color: #252525;
+    border-radius: 10px;
+}
+
+#cancel-edit-btn:hover {
+    background-color: #c4c4c4;
+    color: #252525;
 }
 
 /* Toolbar */

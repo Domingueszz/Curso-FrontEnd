@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+.logo {
+    width: 11rem;
+    height:3.5rem;
+}
+
 body {
     background-image: url(../Images/background.png);
 }

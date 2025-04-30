@@ -188,3 +188,36 @@ input, select {
     text-decoration: line-through;
     font-size: italic;
 }
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .todo-container {
+        margin: 2rem 1rem;
+        padding: 1rem;
+    }
+
+    .form-control {
+        flex-direction: column;
+    }
+
+    #search form {
+        flex-direction: column;
+    }
+
+    #search input {
+        margin-right: 0;
+    }
+
+    #toolbar {
+        flex-direction: column;
+    }
+
+    #filter, #search {
+        width: 100%;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.25rem 0.4rem;
+    }
+}

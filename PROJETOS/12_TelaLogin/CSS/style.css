@@ -101,6 +101,17 @@ input[type="text"] {
   letter-spacing: 1px;
 }
 
+input[type="text"]:hover {
+  border: 1px solid #116def;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #116def;
+  box-shadow: 0 0 5px rgba(17, 109, 239, 0.5);
+  outline: none;
+}
+
 a {
   text-decoration: none;
   color: #116def;
@@ -108,6 +119,11 @@ a {
   margin-top: -0.5rem;
   align-self: flex-end;
   letter-spacing: 1px;
+}
+
+a:hover {
+  color: #0b4fbc;
+  text-decoration:underline;
 }
 
 input[type="checkbox"] {

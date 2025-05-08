@@ -1,7 +1,9 @@
-  * {
+
+* {
     margin: 0;
     padding: 0;
   }
+  
 
   .container-background {
     width: 100vw;
@@ -63,9 +65,8 @@
     max-width: 40%;
     background-color: #fff;
     display: flex;
-    align-items: center;     /* centraliza horizontalmente os filhos */
-    justify-content: center; /* centraliza verticalmente os filhos */
-    flex-direction: column;
+    align-items: center;     
+    justify-content: center; 
   }
 
   .container-right h2 {
@@ -189,7 +190,12 @@
     color: #0d5edc;
   }
 
-/* Tablets */
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+  }
+  
+
 @media (max-width: 992px) {
   .container-main {
     flex-direction: column;
@@ -212,7 +218,6 @@
   }
 }
 
-/* Celulares */
 @media (max-width: 600px) {
   .container-main {
     flex-direction: column;

@@ -74,6 +74,9 @@
     margin-bottom: 2rem;
     color: #116def;
     letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
   }
 
   form {
@@ -164,6 +167,7 @@
   .social-icons {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
   }

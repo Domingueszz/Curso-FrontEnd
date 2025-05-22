@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Box Shadow</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../JS/script.js" defer></script>
+</head>
+<body>
+    <div id="box-shadow-generator">
+        <div id="controls-container">
+            <h2>Configurações da Box Shadow</h2>
+
+            <div class="form-control">
+                <div class="range-input">
+                    <label for="horizontal">Deslocamento horizontal:</label>
+                    <input type="range" 
+                    id="horizontal" 
+                    name="horizontal" 
+                    min="-100" 
+                    max="100" 
+                    value="5">
+                </div>
+                <div class="reference-input">
+                    <input type="text" id="horizontal-value" name="horizontal-value">
+                    <p>px</p>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <div class="range-input">
+                    <label for="vertical">Deslocamento vertical:</label>
+                    <input type="range" 
+                    id="vertical" 
+                    name="vertical" 
+                    min="-100" 
+                    max="100" 
+                    value="5">
+                </div>
+                <div class="reference-input">
+                    <input type="text" id="horizontal-value" name="horizontal-value">
+                    <p>px</p>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <div class="range-input">
+                    <label for="horizontal">Intensidade do borrão(Blur):</label>
+                    <input type="range" 
+                    id="horizontal" 
+                    name="horizontal" 
+                    min="0" 
+                    max="100" 
+                    value="10">
+                </div>
+                <div class="reference-input">
+                    <input type="text" id="horizontal-value" name="horizontal-value">
+                    <p>px</p>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <div class="range-input">
+                    <label for="horizontal">Intensidade do espalhamento (Spread):</label>
+                    <input type="range" 
+                    id="horizontal" 
+                    name="horizontal" 
+                    min="-100" 
+                    max="100" 
+                    value="3">
+                </div>
+                <div class="reference-input">
+                    <input type="text" id="horizontal-value" name="horizontal-value">
+                    <p>px</p>
+                </div>
+            </div>
+            
+
+        
+
+
+        </div>
+
+        <div id="preview">
+            <h2>Preview do efeito gerado:</h2>
+            <div id="box"></div>
+        </div>
+    </div>
+    <div id="generated-rule">
+        <h2>Copie e cole no seu arquivo de CSS:</h2>
+        <div id="rules-area">
+            <p id="rule">box-shadow <span></span></p>
+            <p id="webkit-rule">-webkit-box-shadow <span></span></p>
+            <p id="morule">-moz-box-shadow <span></span></p>
+        </div>
+    </div>
+</body>
+</html>

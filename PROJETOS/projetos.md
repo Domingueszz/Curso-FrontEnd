@@ -10,4 +10,4 @@ Cada projeto tem um propósito específico, podendo envolver desde layouts simpl
 
 O objetivo desta coleção é aprimorar habilidades no desenvolvimento frontend, experimentando novas abordagens e boas práticas.  
 
----
+----

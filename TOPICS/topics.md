@@ -1,6 +1,6 @@
 # **Tópicos Front-End**
 
-A pasta de **Tópicos** reúne os principais conteúdos estudados ao longo do curso de **Desenvolvimento Front-End**, abrangendo tanto a parte **conceitual** quanto a **prática** dos principais assuntos explorados.
+A pasta de **Tópicos** reúne os principais conteúdos estudados ao longo do curso de **Desenvolvimento Front-End**, abrangendo a parte **conceitual** dos principais assuntos explorados.
 
 
 ## **Objetivo**

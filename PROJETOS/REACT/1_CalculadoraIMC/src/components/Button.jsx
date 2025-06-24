@@ -1,15 +1,15 @@
-import "./Button.css"
+import "./Button.css";
 
-const Button = ({id, text, action}) => {
-    const handleAction = (e) => {
-        action(e);
-    };
+const Button = ({ id, text, action }) => {
+  const handleAction = (e) => {
+    action(e);
+  };
 
-    return (
+  return (
     <button id={id} onClick={handleAction}>
-        {text}
+      {text}
     </button>
-    );
+  );
 };
 
 export default Button;

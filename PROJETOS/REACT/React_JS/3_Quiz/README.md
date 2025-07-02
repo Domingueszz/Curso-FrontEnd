@@ -1,12 +1,30 @@
-# React + Vite
+# **Projeto: Quiz Interativo de Programação com React**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introdução  
+Este projeto tem como objetivo desenvolver um **quiz interativo sobre programação**, utilizando **React.js** e **JavaScript**. A aplicação apresenta perguntas de múltipla escolha sobre temas como HTML, CSS, JavaScript e lógica de programação, fornecendo feedback imediato ao usuário e exibindo a pontuação final ao término do quiz.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias Utilizadas  
+- **React.js**: Para a construção de componentes reutilizáveis e controle de fluxo entre as telas do quiz.  
+- **JavaScript**: Para lógica de verificação de respostas, pontuação e progresso.  
+- **CSS**: Para estilização da interface, com foco em **design responsivo**, cores vibrantes e animações leves.  
+- **Hooks do React**: Uso de `useState` e `useEffect` para controle de estado e efeitos durante o jogo.
 
-## Expanding the ESLint configuration
+## Funcionalidades Principais  
+- ✅ Tela inicial com botão de "Iniciar Quiz"  
+- ✅ Perguntas de múltipla escolha com feedback visual  
+- ✅ Controle de progresso (ex: "Pergunta 2 de 5")  
+- ✅ Cálculo automático da pontuação final  
+- ✅ Tela de resultado com mensagem personalizada  
+- ✅ Possibilidade de reiniciar o quiz  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Objetivos do Projeto  
+✔ Criar uma aplicação interativa e educativa utilizando **React e JS**.  
+✔ Explorar **controle de estado**, navegação entre componentes e renderização condicional.  
+✔ Melhorar a experiência do usuário com **feedback visual** e **interface intuitiva**.  
+✔ Aplicar lógica de verificação de respostas e cálculo de pontuação.  
+✔ Estimular o aprendizado de programação por meio de um formato leve e divertido.
+
+Este projeto é ideal para praticar os fundamentos do React em uma aplicação dinâmica, com **múltiplas telas, lógica interativa e feedback ao usuário**, além de incentivar o estudo de programação por meio de uma ferramenta prática.
+
+![Preview do Quiz de Programação com React](image.png)

@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { MemoryCard } from "./components/MemoryCard";
+import { AddCard } from "./components/AddCard";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="min-h-screen bg-[#121212] px-8 py-12">
+      <h1 className="text-4xl font-bold text-[#ff9900] mb-10">My Memories</h1>
+
+      <div className="flex gap-6 flex-wrap">
+        <MemoryCard
+          title="Party house"
+          image="https://images.unsplash.com/photo-1592194996308-7b43878e84a6"
+        />
+        <MemoryCard
+          title="Party house"
+          image="https://images.unsplash.com/photo-1592194996308-7b43878e84a6"
+        />
+        <AddCard />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+
+      <div className="mt-12">
+        <button className="bg-[#ff9900] text-black font-semibold px-6 py-3 rounded-full hover:brightness-110 transition">
+          Ver coleção
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

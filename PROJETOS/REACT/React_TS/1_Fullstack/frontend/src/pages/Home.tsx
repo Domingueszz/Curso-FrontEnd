@@ -1,51 +1,68 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import api from '../services/api';
+// src/pages/Home.tsx
+import { useEffect, useState } from "react";
+import { getMemories } from "../services/memoriesApi";
+import MemoryCard from "../components/MemoryCard";
+import AddCard from "../components/AddCard";
+import "./Home.css";
 
-interface Memory {
+type Memory = {
   _id: string;
   title: string;
   image: string;
-}
+  description: string;
+};
 
 export default function Home() {
   const [memories, setMemories] = useState<Memory[]>([]);
 
   useEffect(() => {
-    api.get('/memories')
-      .then(res => setMemories(res.data))
-      .catch(err => console.error('Erro ao carregar memórias:', err));
+    async function fetchData() {
+      const data = await getMemories();
+      setMemories(data);
+    }
+    fetchData();
   }, []);
 
   return (
-    <div className="min-h-screen bg-light p-6">
-      <header className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold text-primary">Minhas Memórias</h1>
-        <Link to="/create">
-          <button className="bg-accent text-white px-4 py-2 rounded-xl shadow hover:bg-green-600 transition">
-            + Adicionar Memória
-          </button>
-        </Link>
-      </header>
+    <>
 
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-        {memories.map(memory => (
-          <Link to={`/memory/${memory._id}`} key={memory._id}>
-            <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
-              <img
-                src={`http://localhost:5000/uploads/${memory.image}`}
-                alt={memory.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h2 className="text-xl font-semibold text-primary truncate">
-                  {memory.title}
-                </h2>
-              </div>
-            </div>
-          </Link>
+    <div className="home">  
+      <h1 className="title">My Memories</h1>
+
+      <div className="cards-container">
+        {memories.map((memory) => (
+          <MemoryCard
+            key={memory._id}
+            title={memory.title}
+            image={memory.image}
+            onClick={() => alert(`Ver: ${memory.title}`)}
+          />
         ))}
+        <AddCard />
       </div>
+
+      <button className="blob-btn view-collection">
+            Ver coleção
+            <span className="blob-btn__inner">
+                <span className="blob-btn__blobs">
+                <span className="blob-btn__blob"></span>
+                <span className="blob-btn__blob"></span>
+                <span className="blob-btn__blob"></span>
+                <span className="blob-btn__blob"></span>
+                </span>
+            </span>
+        </button>
     </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="goo"></feColorMatrix>
+                <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+            </filter>
+        </defs>
+    </svg>
+    </>
   );
 }

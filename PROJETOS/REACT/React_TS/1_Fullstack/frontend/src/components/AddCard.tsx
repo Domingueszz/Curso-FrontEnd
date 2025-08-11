@@ -12,15 +12,6 @@ export default function AddCard() {
       <p>Add Card</p>
     </div>
 
-    <div className="add-card" onClick={() => navigate("/add")}>
-      <div className="plus">+</div>
-      <p>Add Card</p>
-    </div>
-
-    <div className="add-card" onClick={() => navigate("/add")}>
-      <div className="plus">+</div>
-      <p>Add Card</p>
-    </div>
     </>
   );
 }

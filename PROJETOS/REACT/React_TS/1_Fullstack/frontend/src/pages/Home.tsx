@@ -15,18 +15,19 @@ type Memory = {
 export default function Home() {
   const [memories, setMemories] = useState<Memory[]>([]);
 
+  async function fetchData() {
+    const data = await getMemories();
+    // Pega as últimas 2 memórias (mais recentes primeiro)
+    const lastTwo = [...data].slice(-2).reverse();
+    setMemories(lastTwo);
+  }
+
   useEffect(() => {
-    async function fetchData() {
-      const data = await getMemories();
-      setMemories(data);
-    }
     fetchData();
   }, []);
 
   return (
-    <>
-
-    <div className="home">  
+    <div className="home">
       <h1 className="title">My Memories</h1>
 
       <div className="cards-container">
@@ -42,27 +43,38 @@ export default function Home() {
       </div>
 
       <button className="blob-btn view-collection">
-            Ver coleção
-            <span className="blob-btn__inner">
-                <span className="blob-btn__blobs">
-                <span className="blob-btn__blob"></span>
-                <span className="blob-btn__blob"></span>
-                <span className="blob-btn__blob"></span>
-                <span className="blob-btn__blob"></span>
-                </span>
-            </span>
-        </button>
-    </div>
+        Ver coleção
+        <span className="blob-btn__inner">
+          <span className="blob-btn__blobs">
+            <span className="blob-btn__blob"></span>
+            <span className="blob-btn__blob"></span>
+            <span className="blob-btn__blob"></span>
+            <span className="blob-btn__blob"></span>
+          </span>
+        </span>
+      </button>
 
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>
-            <filter id="goo">
-                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="goo"></feColorMatrix>
-                <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
-            </filter>
+          <filter id="goo">
+            <feGaussianBlur
+              in="SourceGraphic"
+              result="blur"
+              stdDeviation="10"
+            ></feGaussianBlur>
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  
+                      0 1 0 0 0  
+                      0 0 1 0 0  
+                      0 0 0 21 -7"
+              result="goo"
+            ></feColorMatrix>
+            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+          </filter>
         </defs>
-    </svg>
-    </>
+      </svg>
+    </div>
   );
 }

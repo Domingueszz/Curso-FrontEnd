@@ -1,7 +1,7 @@
 import express from 'express';
 import multer from 'multer';
 import path from 'path';
-import { createMemory, getAllMemories, getMemoryById } from '../controllers/memoryController';
+import { createMemory, getAllMemories, getMemoryById, deleteMemory } from '../controllers/memoryController';
 
 const router = express.Router();
 
@@ -17,8 +17,10 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
+// Rotas
 router.get('/', getAllMemories);
 router.get('/:id', getMemoryById);
 router.post('/', upload.single('image'), createMemory);
+router.delete('/:id', deleteMemory); // ← adicionada
 
 export default router;

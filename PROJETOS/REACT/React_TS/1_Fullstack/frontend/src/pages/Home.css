@@ -1,9 +1,11 @@
 .home {
-    margin-top: 20%;
+  margin-top: 20%;
   padding: 2rem;
   background: #1e1e1ed2;    
   color: #fff;
-  max-height: 100vh;
+  height: 500px;
+  margin-bottom: 5rem;
+  border-radius: 20px;
 
 .title {
     font-size: 2.5rem;
@@ -26,10 +28,12 @@
 
     .view-collection.blob-btn {
     position: relative;
+    margin: 2rem auto 0 auto;
     margin-top: 2rem;
     padding: 0.75rem 2rem;
+    display: flex;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: uppercase;  
     color: #f9a825;
     font-size: 16px;
     font-weight: bold;

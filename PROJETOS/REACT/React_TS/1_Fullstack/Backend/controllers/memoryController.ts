@@ -37,3 +37,18 @@ export const getMemoryById = async (req: Request, res: Response) => {
     res.status(500).json({ error: 'Erro ao buscar memória' });
   }
 };
+
+export const deleteMemory = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const deleted = await Memory.findByIdAndDelete(id);
+
+    if (!deleted) {
+      return res.status(404).json({ error: 'Memória não encontrada' });
+    }
+
+    res.status(200).json({ message: 'Memória deletada com sucesso' });
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao deletar memória' });
+  }
+};

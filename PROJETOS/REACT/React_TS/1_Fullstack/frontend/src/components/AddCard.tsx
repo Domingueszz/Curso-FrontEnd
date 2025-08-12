@@ -1,4 +1,3 @@
-// src/components/AddCard.tsx
 import { useNavigate } from "react-router-dom";
 import "./AddCard.css";
 

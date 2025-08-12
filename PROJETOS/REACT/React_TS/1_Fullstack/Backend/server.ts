@@ -10,21 +10,17 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middlewares
 app.use(cors());
 app.use(express.json());
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 
-// Rotas
 app.use('/memories', memoryRoutes);
 
-// Middleware global de tratamento de erros
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   console.error('Erro global:', err);
   res.status(500).json({ message: 'Erro interno do servidor' });
 });
 
-// Função para conectar ao MongoDB e iniciar servidor
 async function startServer() {
   try {
     await mongoose.connect(process.env.MONGO_URI as string);
@@ -35,7 +31,7 @@ async function startServer() {
     });
   } catch (err) {
     console.error('❌ Erro ao conectar ao MongoDB:', err);
-    process.exit(1); // Encerra o processo com erro
+    process.exit(1); 
   }
 }
 

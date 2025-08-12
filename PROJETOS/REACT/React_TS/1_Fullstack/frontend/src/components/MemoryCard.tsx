@@ -1,4 +1,3 @@
-// src/components/MemoryCard.tsx
 import "./MemoryCard.css";
 
 type Props = {
@@ -8,13 +7,16 @@ type Props = {
 };
 
 export default function MemoryCard({ title, image, onClick }: Props) {
+  const API_URL = import.meta.env.VITE_API_URL;
+
   return (
-    <>
     <div className="memory-card" onClick={onClick}>
-      <img src={image} alt={title} />
+      <img
+        src={`${API_URL}/uploads/${image}`}
+        alt={title}
+        style={{ width: '100%', height: 'auto' }}
+      />
       <h3>{title}</h3>
-      <button>Ver mais</button>
     </div>
-    </>
   );
 }

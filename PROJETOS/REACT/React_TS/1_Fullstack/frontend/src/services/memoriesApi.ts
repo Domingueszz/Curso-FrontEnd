@@ -1,4 +1,3 @@
-// src/services/memoriesApi.ts
 import { api } from "./api";
 
 export async function getMemories() {

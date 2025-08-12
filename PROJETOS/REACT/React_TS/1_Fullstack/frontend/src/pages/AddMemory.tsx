@@ -23,7 +23,7 @@ export default function AddMemory() {
 
   try {
     await createMemory(formData);
-    navigate("/"); // Vai para Home
+    navigate("/"); 
   } catch (err) {
     console.error("Erro ao criar memória", err);
   }
@@ -36,7 +36,6 @@ export default function AddMemory() {
 
   return (
     <div className="add-memory">
-      {/* Botão de voltar */}
     <button
       type="button"
       className="btn-back"

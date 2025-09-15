@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+// 1. Em vez de 'Link', importe 'useNavigate'
+import { useNavigate } from 'react-router-dom'; 
 import { getMemories } from "../services/memoriesApi";
 import MemoryCard from "../components/MemoryCard";
 import AddCard from "../components/AddCard";
@@ -16,6 +18,9 @@ export default function Home() {
   const [memories, setMemories] = useState<Memory[]>([]);
   const [selectedMemory, setSelectedMemory] = useState<Memory | null>(null);
 
+  // 2. Inicialize o hook dentro do componente
+  const navigate = useNavigate();
+
   async function fetchData() {
     const data = await getMemories();
     const lastTwo = [...data].slice(-2).reverse();
@@ -25,6 +30,11 @@ export default function Home() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  // 3. Crie uma função para lidar com o clique
+  const handleNavigateToCollection = () => {
+    navigate('/collection');
+  };
 
   return (
     <div className="home">
@@ -42,7 +52,11 @@ export default function Home() {
         <AddCard />
       </div>
 
-      <button className="blob-btn view-collection">
+      {/* 4. Mantenha o <button> original e adicione o onClick */}
+      <button 
+        className="blob-btn view-collection" 
+        onClick={handleNavigateToCollection}
+      >
         Ver coleção
         <span className="blob-btn__inner">
           <span className="blob-btn__blobs">
@@ -64,6 +78,7 @@ export default function Home() {
         />
       )}
 
+      {/* SVG */}
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>
           <filter id="goo">

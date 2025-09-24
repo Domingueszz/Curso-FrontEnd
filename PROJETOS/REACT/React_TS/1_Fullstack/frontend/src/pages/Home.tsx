@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-// 1. Em vez de 'Link', importe 'useNavigate'
 import { useNavigate } from 'react-router-dom'; 
-import { getMemories } from "../services/memoriesApi";
+import { getMemories, deleteMemory } from "../services/memoriesApi"; // 1. Importe o deleteMemory
 import MemoryCard from "../components/MemoryCard";
 import AddCard from "../components/AddCard";
 import MemoryModal from '../components/MemoryModal';
+import EditMemoryModal from "../components/EditMemoryModal"; // 2. Importe o modal de edição
 import "./Home.css";
 
 type Memory = {
@@ -17,21 +17,42 @@ type Memory = {
 export default function Home() {
   const [memories, setMemories] = useState<Memory[]>([]);
   const [selectedMemory, setSelectedMemory] = useState<Memory | null>(null);
-
-  // 2. Inicialize o hook dentro do componente
+  const [editingMemory, setEditingMemory] = useState<Memory | null>(null); // 3. Adicione o estado de edição
   const navigate = useNavigate();
 
   async function fetchData() {
     const data = await getMemories();
-    const lastTwo = [...data].slice(-2).reverse();
-    setMemories(lastTwo);
+    // Exibe apenas as 2 memórias mais recentes na home
+    const latestTwo = data.slice(0, 2);
+    setMemories(latestTwo);
   }
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  // 3. Crie uma função para lidar com o clique
+  // 4. Adicione as funções para deletar, editar e atualizar
+  async function handleDelete(id: string) {
+    try {
+      await deleteMemory(id);
+      // Atualiza o estado para remover o card da tela
+      setMemories(memories.filter((memory) => memory._id !== id));
+      setSelectedMemory(null); // Fecha o modal
+    } catch (error) {
+      console.error("Erro ao deletar memória:", error);
+    }
+  }
+
+  function handleEdit(memory: Memory) {
+    setSelectedMemory(null); // Fecha o modal de detalhes
+    setEditingMemory(memory); // Abre o modal de edição
+  }
+
+  function handleUpdate(updatedMemory: Memory) {
+    setMemories(memories.map(m => (m._id === updatedMemory._id ? updatedMemory : m)));
+    setEditingMemory(null);
+  }
+
   const handleNavigateToCollection = () => {
     navigate('/collection');
   };
@@ -52,29 +73,39 @@ export default function Home() {
         <AddCard />
       </div>
 
-      {/* 4. Mantenha o <button> original e adicione o onClick */}
       <button 
         className="blob-btn view-collection" 
         onClick={handleNavigateToCollection}
       >
-        Ver coleção
-        <span className="blob-btn__inner">
-          <span className="blob-btn__blobs">
-            <span className="blob-btn__blob"></span>
-            <span className="blob-btn__blob"></span>
-            <span className="blob-btn__blob"></span>
-            <span className="blob-btn__blob"></span>
-          </span>
-        </span>
-      </button>
+        
+  Ver coleção
+  <span className="blob-btn__inner">
+    <span className="blob-btn__blobs">
+      <span className="blob-btn__blob"></span>
+      <span className="blob-btn__blob"></span>
+      <span className="blob-btn__blob"></span>
+      <span className="blob-btn__blob"></span>
+    </span>
+  </span>
+</button>
 
-      {/* Modal de detalhes */}
+
+      {/* 5. Conecte as funções ao Modal de Detalhes */}
       {selectedMemory && (
         <MemoryModal
           memory={selectedMemory}
           onClose={() => setSelectedMemory(null)}
-          onEdit={(id) => console.log("Editar", id)}
-          onDelete={(id) => console.log("Excluir", id)}
+          onEdit={() => handleEdit(selectedMemory)}
+          onDelete={() => handleDelete(selectedMemory._id)}
+        />
+      )}
+
+      {/* 6. Adicione o Modal de Edição */}
+      {editingMemory && (
+        <EditMemoryModal
+          memory={editingMemory}
+          onClose={() => setEditingMemory(null)}
+          onUpdate={handleUpdate}
         />
       )}
 

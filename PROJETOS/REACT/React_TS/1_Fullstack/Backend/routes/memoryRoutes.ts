@@ -21,6 +21,6 @@ const upload = multer({ storage });
 router.get('/', getAllMemories);
 router.get('/:id', getMemoryById);
 router.post('/', upload.single('image'), createMemory);
-router.delete('/:id', deleteMemory); // ← adicionada
+router.delete("/:id", deleteMemory);
 
 export default router;

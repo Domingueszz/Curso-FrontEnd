@@ -11,39 +11,49 @@ export default function AddMemory() {
   const [image, setImage] = useState<File | null>(null);
   const navigate = useNavigate();
 
+  // NOVO: Estado de carregamento para feedback visual
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (!image) return alert("Adicione uma imagem!");
+    if (!title || !description || !image) {
+      return alert("Por favor, preencha todos os campos e selecione uma imagem.");
+    }
 
-  const formData = new FormData();
-  formData.append("title", title);
-  formData.append("description", description);
-  formData.append("image", image);
+    setIsLoading(true); // Inicia o carregamento
 
-  try {
-    await createMemory(formData);
-    navigate("/"); 
-  } catch (err) {
-    console.error("Erro ao criar memória", err);
-  }
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("image", image);
 
+    try {
+      await createMemory(formData);
+      // SUGESTÃO: Navegar para a coleção para ver a nova memória
+      navigate("/collection"); 
+    } catch (err) {
+      console.error("Erro ao criar memória", err);
+      alert("Não foi possível criar a memória. Tente novamente.");
+      setIsLoading(false); // Para o carregamento em caso de erro
+    }
 
-
-    return <FontAwesomeIcon icon={faReply} />
-    
+    // REMOVIDO: A linha 'return <FontAwesomeIcon icon={faReply} />' foi removida daqui.
   };
 
   return (
     <div className="add-memory">
-    <button
-      type="button"
-      className="btn-back"
-      onClick={() => navigate(-1)}
-    >
-      <FontAwesomeIcon icon={faReply} />
-    </button>
+      {/* Botão de voltar funcional, ótimo! */}
+      <button
+        type="button"
+        className="btn-back"
+        onClick={() => navigate(-1)}
+        disabled={isLoading}
+      >
+        <FontAwesomeIcon icon={faReply} />
+      </button>
 
+      {/* Título animado, muito legal! */}
       <h1 className="cool">
         {"Adicionar Memória".split(" ").map((letter, index) => (
           <span key={index} data-text={letter === " " ? "\u00A0" : letter}>
@@ -60,6 +70,7 @@ export default function AddMemory() {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
+            disabled={isLoading}
           />
         </label>
 
@@ -69,6 +80,7 @@ export default function AddMemory() {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             required
+            disabled={isLoading}
           />
         </label>
 
@@ -79,10 +91,13 @@ export default function AddMemory() {
             accept="image/*"
             onChange={(e) => setImage(e.target.files?.[0] || null)}
             required
+            disabled={isLoading}
           />
         </label>
 
-        <button type="submit">Salvar</button>
+        <button type="submit" disabled={isLoading}>
+          {isLoading ? "Salvando..." : "Salvar"}
+        </button>
       </form>
     </div>
   );

@@ -17,14 +17,18 @@ export async function createMemory(data: FormData) {
 }
 
 // UPDATE - Atualiza uma memória existente
-export async function updateMemory(id: string, data: FormData) {
+export async function updateMemory(
+  id: string,
+  data: { title: string; description: string }
+) {
   const res = await api.put(`/memories/${id}`, data, {
-    headers: {
-      "Content-Type": "multipart/form-data",
-    },
+    headers: { "Content-Type": "application/json" },
   });
   return res.data;
 }
+
+
+
 
 // DELETE - Deleta uma memória existente
 export async function deleteMemory(id: string) {

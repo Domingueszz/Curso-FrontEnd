@@ -50,39 +50,32 @@ export const getMemoryById = async (req: Request, res: Response) => {
   }
 };
 
-// UPDATE - Atualiza uma memória existente pelo seu ID.
 export const updateMemory = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const { title, description } = req.body;
 
-    const memory = await Memory.findById(id);
-    if (!memory) {
-      return res.status(404).json({ msg: 'Memória não encontrada.' });
-    }
-
-    memory.title = title || memory.title;
-    memory.description = description || memory.description;
+    const updatedFields: any = { title, description };
 
     if (req.file) {
-      // 👇 CORREÇÃO APLICADA AQUI
-      // Verifica se existe uma imagem antiga antes de tentar deletá-la
-      if (memory.image) {
-        const oldImagePath = path.resolve(__dirname, '..', 'uploads', memory.image);
-        fs.unlink(oldImagePath, (err) => {
-          if (err) console.error('Erro ao deletar imagem antiga:', err);
-        });
-      }
-      memory.image = req.file.filename;
+      updatedFields.image = req.file.filename; // ou o caminho completo
     }
 
-    const updatedMemory = await memory.save();
-    res.status(200).json(updatedMemory);
+    const updatedMemory = await Memory.findByIdAndUpdate(id, updatedFields, {
+      new: true,
+    });
+
+    if (!updatedMemory) {
+      return res.status(404).json({ message: "Memória não encontrada" });
+    }
+
+    res.json(updatedMemory);
   } catch (error) {
-    console.error('Erro ao atualizar memória:', error);
-    res.status(500).json({ msg: 'Ocorreu um erro no servidor.' });
+    console.error("Erro ao atualizar memória:", error);
+    res.status(500).json({ message: "Erro ao atualizar memória" });
   }
 };
+
 
 // DELETE - Deleta uma memória pelo seu ID.
 export const deleteMemory = async (req: Request, res: Response) => {

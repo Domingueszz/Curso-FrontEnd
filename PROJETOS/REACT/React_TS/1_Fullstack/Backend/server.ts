@@ -14,7 +14,6 @@ app.use(cors());
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-// 👇 A CORREÇÃO ESTÁ NESTA LINHA
 app.use('/api/memories', memoryRoutes);
 
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {

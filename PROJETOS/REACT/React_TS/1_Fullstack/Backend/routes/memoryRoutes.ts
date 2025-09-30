@@ -5,7 +5,6 @@ import { createMemory, getAllMemories, getMemoryById, updateMemory, deleteMemory
 
 const router = express.Router();
 
-// Configuração do Multer
 const storage = multer.diskStorage({
   destination: (_req, _file, cb) => {
     cb(null, path.join(__dirname, '../uploads'));

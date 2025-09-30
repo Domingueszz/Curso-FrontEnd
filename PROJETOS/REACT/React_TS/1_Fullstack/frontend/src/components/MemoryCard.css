@@ -7,7 +7,7 @@
   flex-direction: column;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer; /* Adicionado para indicar que é clicável */
+  cursor: pointer; 
 }
 
 .memory-card:hover {
@@ -23,16 +23,15 @@
 
 .card-content {
   padding: 1rem;
-  display: flex; /* Mantém o flex para alinhamento */
+  display: flex; 
   flex-grow: 1;
-  justify-content: center; /* Centraliza o título horizontalmente */
-  align-items: center; /* Centraliza o título verticalmente */
+  justify-content: center;
+  align-items: center; 
 }
 
 .card-content h3 {
   color: #f9a825;
-  margin: 0; /* Remove a margem para um melhor alinhamento */
+  margin: 0; 
   text-align: center;
 }
 
-/* Os estilos .card-button e .card-button:hover foram removidos */

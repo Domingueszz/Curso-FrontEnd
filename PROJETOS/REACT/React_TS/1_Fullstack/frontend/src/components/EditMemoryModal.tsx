@@ -25,7 +25,6 @@ export default function EditMemoryModal({ memory, onClose, onUpdate }: Props) {
     setIsLoading(true);
 
     try {
-      // Envia JSON ao invés de FormData
       const updatedData = await updateMemory(memory._id, {
         title,
         description,

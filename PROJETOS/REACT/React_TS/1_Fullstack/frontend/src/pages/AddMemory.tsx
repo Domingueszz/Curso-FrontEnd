@@ -11,7 +11,6 @@ export default function AddMemory() {
   const [image, setImage] = useState<File | null>(null);
   const navigate = useNavigate();
 
-  // NOVO: Estado de carregamento para feedback visual
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -21,7 +20,7 @@ export default function AddMemory() {
       return alert("Por favor, preencha todos os campos e selecione uma imagem.");
     }
 
-    setIsLoading(true); // Inicia o carregamento
+    setIsLoading(true); 
 
     const formData = new FormData();
     formData.append("title", title);
@@ -30,20 +29,17 @@ export default function AddMemory() {
 
     try {
       await createMemory(formData);
-      // SUGESTÃO: Navegar para a coleção para ver a nova memória
       navigate("/collection"); 
     } catch (err) {
       console.error("Erro ao criar memória", err);
       alert("Não foi possível criar a memória. Tente novamente.");
-      setIsLoading(false); // Para o carregamento em caso de erro
+      setIsLoading(false); 
     }
 
-    // REMOVIDO: A linha 'return <FontAwesomeIcon icon={faReply} />' foi removida daqui.
   };
 
   return (
     <div className="add-memory">
-      {/* Botão de voltar funcional, ótimo! */}
       <button
         type="button"
         className="btn-back"
@@ -53,7 +49,6 @@ export default function AddMemory() {
         <FontAwesomeIcon icon={faReply} />
       </button>
 
-      {/* Título animado, muito legal! */}
       <h1 className="cool">
         {"Adicionar Memória".split(" ").map((letter, index) => (
           <span key={index} data-text={letter === " " ? "\u00A0" : letter}>

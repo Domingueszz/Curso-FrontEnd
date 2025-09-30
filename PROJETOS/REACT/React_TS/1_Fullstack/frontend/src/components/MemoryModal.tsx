@@ -13,7 +13,6 @@ type Props = {
 };
 
 export default function MemoryModal({ memory, onClose, onEdit, onDelete }: Props) {
-  // Pega a URL base da API, assim como no MemoryCard
   const API_URL = import.meta.env.VITE_API_URL;
 
   return (
@@ -22,7 +21,6 @@ export default function MemoryModal({ memory, onClose, onEdit, onDelete }: Props
         className="modal-content"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* 👇 CORREÇÃO APLICADA AQUI */}
         <img src={`${API_URL}/uploads/${memory.image}`} alt={memory.title} />
 
         <h2>{memory.title}</h2>

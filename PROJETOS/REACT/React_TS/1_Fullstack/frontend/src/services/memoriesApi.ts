@@ -6,7 +6,7 @@ export async function getMemories() {
   return res.data;
 }
 
-// CREATE - Cria uma nova memória
+// CREATE 
 export async function createMemory(data: FormData) {
   const res = await api.post("/memories", data, {
     headers: {
@@ -16,7 +16,7 @@ export async function createMemory(data: FormData) {
   return res.data;
 }
 
-// UPDATE - Atualiza uma memória existente
+// UPDATE 
 export async function updateMemory(
   id: string,
   data: { title: string; description: string }
@@ -30,7 +30,7 @@ export async function updateMemory(
 
 
 
-// DELETE - Deleta uma memória existente
+// DELETE
 export async function deleteMemory(id: string) {
   const res = await api.delete(`/memories/${id}`);
   return res.data;

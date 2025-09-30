@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom'; 
-import { getMemories, deleteMemory } from "../services/memoriesApi"; // 1. Importe o deleteMemory
-import MemoryCard from "../components/MemoryCard";
+import { getMemories, deleteMemory } from "../services/memoriesApi"; 
 import AddCard from "../components/AddCard";
 import MemoryModal from '../components/MemoryModal';
-import EditMemoryModal from "../components/EditMemoryModal"; // 2. Importe o modal de edição
+import EditMemoryModal from "../components/EditMemoryModal"; 
 import "./Home.css";
 
 type Memory = {
@@ -17,12 +16,11 @@ type Memory = {
 export default function Home() {
   const [memories, setMemories] = useState<Memory[]>([]);
   const [selectedMemory, setSelectedMemory] = useState<Memory | null>(null);
-  const [editingMemory, setEditingMemory] = useState<Memory | null>(null); // 3. Adicione o estado de edição
+  const [editingMemory, setEditingMemory] = useState<Memory | null>(null); 
   const navigate = useNavigate();
 
   async function fetchData() {
     const data = await getMemories();
-    // Exibe apenas as 2 memórias mais recentes na home
     const latestTwo = data.slice(0, 2);
     setMemories(latestTwo);
   }
@@ -31,21 +29,19 @@ export default function Home() {
     fetchData();
   }, []);
 
-  // 4. Adicione as funções para deletar, editar e atualizar
   async function handleDelete(id: string) {
     try {
       await deleteMemory(id);
-      // Atualiza o estado para remover o card da tela
       setMemories(memories.filter((memory) => memory._id !== id));
-      setSelectedMemory(null); // Fecha o modal
+      setSelectedMemory(null); 
     } catch (error) {
       console.error("Erro ao deletar memória:", error);
     }
   }
 
   function handleEdit(memory: Memory) {
-    setSelectedMemory(null); // Fecha o modal de detalhes
-    setEditingMemory(memory); // Abre o modal de edição
+    setSelectedMemory(null); 
+    setEditingMemory(memory); 
   }
 
   function handleUpdate(updatedMemory: Memory) {
@@ -90,7 +86,6 @@ export default function Home() {
 </button>
 
 
-      {/* 5. Conecte as funções ao Modal de Detalhes */}
       {selectedMemory && (
         <MemoryModal
           memory={selectedMemory}
@@ -100,7 +95,6 @@ export default function Home() {
         />
       )}
 
-      {/* 6. Adicione o Modal de Edição */}
       {editingMemory && (
         <EditMemoryModal
           memory={editingMemory}
